@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <meta name="description" content="Projects - Jordan Tan" /> 
+    <title>Jordan Tan — Projects</title> 
+    <link rel="stylesheet" href="styles.css" /> 
+  </head> 
+  <body> 
+    <div id="shared-header"></div> 
+    <main class="container" role="main" style="max-width:1100px;margin:0 auto;padding:20px;"> 
+      <header style="display:flex;gap:12px;align-items:center;margin-bottom:6px;"> 
+        <h1 style="margin:.2rem 0;font-family:system-ui, -apple-system;">Projects</h1> 
+      </header>
+      <section id="projects-list" class="card-grid" style="display:grid;gap:16px;margin-top:6px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+        <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+          <h3>Marketing Website for Evolve Creative</h3>
+          <p>Client: Evolve Creative</p>
+    <p><a href="https://evolve-creative.com.au/" target="_blank" rel="noopener">evolve-creative.com.au</a></p>
+  </article>
+
+  <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+    <h3>Sustainability Challenge (University)</h3>
+    <p>Group project: Climate Change Website Template</p>
+    <p>Figma Prototype: <a href="https://www.figma.com/" target="_blank" rel="noopener">Figma</a></p>
+  </article>
+
+  <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+    <h3>This Portfolio Website</h3>
+    <p>Self-initiated project to showcase skills and projects.</p>
+  </article>
+
+</section>
+
+<section id="freelance" style="margin-top:28px;">
+  <h2 style="background-color:rgb(168,185,244);padding:10px;border-radius:8px;display:inline-block;">Freelance / Independent Projects</h2>
+  <div class="card" style="margin-top:12px;padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+    <h3>Podcast Production & Branding</h3>
+    <p>Concept, editing, audio branding, and publishing workflow for client podcasts.</p>
+  </div>
+  <div class="card" style="margin-top:12px;padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+    <h3>Advertising Assets</h3>
+    <p>Design and copy for social campaigns; asset scaling for multiple platforms.</p>
+  </div>
+</section>
+    </main> 
+    <script> .then(resp => resp.text())
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading header:', err)); </script> 
+  </body> 
+</html>

@@ -1,69 +1,121 @@
 <!DOCTYPE html>
-
 <html lang="en">
-  <head>
-    <meta name="description" content="Jordan Tan Portfolio" />
-    <title>Jordan Tan</title>
-    <meta name="author" content="Jordan Tan" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="topsection">
-      <header class="initial">
-        <h1 id="initials">JT</h1>
-      </header>
-      <nav class="navbar">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <span id="2nav" class="dropbtn"">Achievements</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jordan Tan</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-          <div class="dropdown-content">
-            <!-- <a href="python.html">Python</a> -->
-            <a href="shecodes.html">SheCodes</a>
-            <a href="University.html">University</a>
-          </div>
-        </div>
-        <a href="contactme.html">Hire me!</a>
-      </nav>
-    </div>
+  <!-- Dynamic Header Container -->
+  <div id="header-placeholder"></div>
 
-    <div>
-      <h2 id="title">Get in touch.</h2>
+  <!-- Main Content -->
+  <main class="container">
 
-      <h6 id="space"></h6>
-        <div class="socials">
-          <!-- <img class="fbimage" src="images/Fb.png" alt="Facebook logo" /> -->
-          <!-- <img class="linkedimage" src="images/Linkedin.png" alt="Linkedin logo" /> -->
-          <a href="https://www.linkedin.com/in/jordan-tan-472598239" target="_blank"><img class="linkedimage" src="images/Linkedin.png" alt="Linkedin logo" /></a>
-          <h4>Click me!</h2>
-          <a href="https://www.instagram.com/_jordantan_/" target="_blank"> <img class="instaimage" src="images/Insta.png" alt="Instagram logo" /></a>
-          <h4>Click me!</h2>
-        </div>
-      <div class="bottomsec">
-        
-        <form class="form" action="https://formspree.io/f/xjvlggqg" method="post">
-          <div class="form-item">
-            <input type="text" name="name" placeholder="Name" />
+    <!-- Contact Grid: Form + Info Cards -->
+    <div class="contact-grid">
+      
+      <!-- Interactive Form Section -->
+      <section class="card contact-form-card">
+        <h2 class="card-title">Send a Direct Message</h2>
+        <p class="card-desc">Fill out the fields below and I’ll get back to you within 24 hours.</p>
+
+        <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required />
           </div>
-          <div class="form-item">
-            <input type="text" name="company" placeholder="Company" />
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required />
           </div>
-          <div class="form-item">
-            <input type="email" id="mail" name="email" placeholder="Email" />
+
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject / Role Opportunity</label>
+            <input type="text" id="subject" name="subject" class="form-input" placeholder="Software Internship / Project Inquiries" />
           </div>
-          <div class="form-item">
-            <textarea
-              type="text"
-              id="message"
-              name="message"
-              placeholder="Message"
-            ></textarea>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name="message" rows="5" class="form-input form-textarea" placeholder="Hi Jordan, I saw your portfolio and would love to chat..." required></textarea>
           </div>
-          <div class="form-item">
-            <button type="submit">Send!</button>
-          </div>
+
+          <button type="submit" class="btn-primary form-submit-btn">
+            send_message<span style="opacity: 0.65;">()</span>
+          </button>
         </form>
+      </section>
+
+      <!-- Direct Details & Social Links -->
+      <div class="contact-sidebar">
+        
+        <!-- Email & Quick Copy Card -->
+        <div class="card info-card">
+          <h3 class="info-heading">Reach Out Directly</h3>
+          <p class="info-text">Prefer sending a direct email?</p>
+          
+          <div class="email-inline-container">
+            <span id="emailText" class="email-address">jordanoterotan@gmail.com</span>
+            <button id="copyEmailBtn" class="copy-icon-btn" title="Copy Email to Clipboard" aria-label="Copy Email">
+              <svg class="copy-icon" viewBox="0 0 24 24" width="15" height="15" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span class="btn-text">Copy</span>
+            </button>
+          </div>
+          <span id="copyFeedback" class="copy-feedback">Email copied to clipboard!</span>
+        </div>
+
+        <!-- Professional Profiles -->
+        <div class="card info-card">
+          <h3 class="info-heading">Links &amp; Code</h3>
+          <div class="social-links-grid">
+            <a href="https://linkedin.com" target="_blank" class="btn-secondary social-btn">
+              LinkedIn ↗
+            </a>
+            <a href="https://github.com" target="_blank" class="btn-secondary social-btn">
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+
       </div>
+
     </div>
-  </body>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Jordan Tan · Built with semantic HTML &amp; CSS</p>
+  </footer>
+
+  <!-- Script to load dynamic header component & handle page behavior -->
+  <script>
+    // 1. Fetch & inject header.html component
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+      .catch(err => console.error('Error loading header:', err));
+
+    // 2. Email Copy Interaction
+    const copyBtn = document.getElementById('copyEmailBtn');
+    const emailText = document.getElementById('emailText').innerText;
+    const copyFeedback = document.getElementById('copyFeedback');
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(emailText).then(() => {
+        copyFeedback.style.display = 'block';
+        copyBtn.innerText = 'Copied! ✓';
+        setTimeout(() => {
+          copyFeedback.style.display = 'none';
+          copyBtn.innerText = 'Copy Email';
+        }, 2500);
+      });
+    });
+  </script>
+
+</body>
 </html>

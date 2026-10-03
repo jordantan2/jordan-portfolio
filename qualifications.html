@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <meta name="description" content="Formal Qualifications - Jordan Tan" /> 
+    <title>Jordan Tan — Formal Qualifications</title> 
+    <link rel="stylesheet" href="styles.css" /> 
+  </head> 
+  <body> 
+    <div id="shared-header"></div> 
+    <main class="container" role="main" style="max-width:1100px;margin:0 auto;padding:20px;"> 
+      <header style="display:flex;gap:12px;align-items:center;"> 
+        <h1 style="font-family:system-ui, -apple-system;margin:.2rem 0;">Formal Qualifications</h1> 
+      </header>
+      <section id="qualification-list" class="card-grid" style="display:grid;gap:16px;margin-top:10px;">
+        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+          <h3>University Bachelor’s Degree in Computing (Software/Computer Science)</h3>
+          <p>Curtin University, Western Australia</p>
+          <ul>
+            <li>Major: Computer Science</li>
+            <li>Expected graduation: February 2027</li>
+            <li>Note: Degree currently in progress</li>
+          </ul>
+        </article>
+
+        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+          <h3>She Codes Plus Program</h3>
+          <p>Completed: 2021/2022</p>
+          <ul>
+            <li>Experience with coding fundamentals, collaboration, and real-world projects</li>
+          </ul>
+        </article>
+
+        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
+         <h3>Other Certifications</h3>
+          <ul>
+            <li>Certificate III & IV in Fitness</li>
+            <li>Approved Manager (Hospitality)</li>
+            <li>First Aid</li>
+            <li>Working With Children Check (WWCC)</li>
+          </ul>
+        </article>
+      </section>
+    </main> 
+    <script> .then(resp => resp.text())
+      .then(html => {
+        document.getElementById('shared-header').innerHTML = html;
+      })
+      .catch(err => console.error('Error loading header:', err)); </script> 
+  </body> 
+</html>
