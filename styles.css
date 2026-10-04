@@ -42,7 +42,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 20px 60px;
-  background-color: rgba(251, 249, 245, 0.85);
+  background-color: rgba(249, 251, 252, 0.904);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -267,70 +267,19 @@ body {
   font-size: 0.95rem;
 }
 
-/* Stat Banner Section */
-.stat-banner {
-  background-color: var(--stat-bg);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  overflow: hidden;
-}
-
-.stat-item {
-  padding: 24px;
-  border-right: 1px solid var(--border-color);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.stat-item:last-child {
-  border-right: none;
-}
-
-.stat-number {
-  font-family: var(--font-mono);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-}
-
-.stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.stat-text-main {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  font-weight: 700;
-}
-
-.stat-text-sub {
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  color: #c85a32;
-  font-weight: 700;
-}
-
 /* Cards & Block Layout */
 .section-block {
   margin-top: 48px;
 }
 
-.section-heading {
-  font-family: var(--font-mono);
-  font-size: 1.3rem;
-  margin-bottom: 20px;
-}
-
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px; /* Controls spacing vertically AND horizontally */
+}
+
+.section-heading {
+  margin-bottom: 20px; /* Space between "Core Highlights" title and the top cards */
 }
 
 .card {
@@ -442,6 +391,211 @@ footer {
   }
 }
 
+
+/* ==========================================
+   Quals Specific Styles
+   ========================================== */
+.page-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.section-header-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.page-heading {
+  font-family: "Courier Prime", monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.heading-badge {
+  font-family: "Courier Prime", monospace;
+  font-size: 1rem;
+  color: #5b73e8;
+  font-weight: 700;
+}
+
+/* Qualification Grid Layout */
+.qual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.qual-card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.qual-card-full {
+  grid-column: span 2; /* Full width for certifications row */
+}
+
+/* Card Header Components */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.status-pill {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  color: #666;
+}
+
+.status-active {
+  background: #eef2ff;
+  color: #5b73e8;
+  font-weight: 700;
+}
+
+.qual-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 4px 0;
+}
+
+.qual-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Detail Key-Value Rows */
+.qual-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #f0f0f0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+}
+
+.detail-label {
+  color: #777;
+  font-family: "Courier Prime", monospace;
+}
+
+.detail-value {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Clean Custom Bullet Lists */
+.clean-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.clean-list li {
+  font-size: 0.9rem;
+  color: #444;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.clean-list li::before {
+  content: "›";
+  position: absolute;
+  left: 0;
+  color: #5b73e8;
+  font-weight: bold;
+  font-family: "Courier Prime", monospace;
+}
+
+/* Keycap Tag Cloud for Certifications */
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.keycap-tag {
+  font-family: "Courier Prime", monospace;
+  font-size: 0.85rem;
+  background: #f4e8dc;
+  color: #4a3b32;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(180, 140, 120, 0.3);
+  box-shadow: 0 2px 0 rgba(180, 140, 120, 0.2);
+}
+
+/* Curtin University Card Rules */
+
+
+/* She Codes Specific Card Rules */
+.shecodes-card {
+  position: relative; /* Container for absolute badge positioning */
+  overflow: visible;  /* Allows the badge to pop slightly over the top/right edges */
+  padding-bottom: 24px;
+}
+
+/* Floating Round Logo Badge */
+.shecodes-badge {
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 80px;  /* Increased from 58px */
+  height: 80px; /* Increased from 58px */
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 2;
+}
+
+.shecodes-badge:hover {
+  transform: scale(1.06) rotate(-3deg);
+  box-shadow: 0 8px 20px rgba(91, 115, 232, 0.25);
+}
+
+/* Bottom Right Status Pill Alignment */
+.card-footer-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 16px;
+}
+/* Link Aesthetics */
+.title-link {
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.title-link:hover {
+  color: #5b73e8;
+}
+
 /* ==========================================
    Contact Page Specific Styles
    ========================================== */
@@ -518,7 +672,8 @@ footer {
 }
 
 .info-card {
-  padding: 24px;
+  margin-top: 24px;    
+  margin-bottom: 32px; 
 }
 
 .info-heading {
@@ -551,12 +706,64 @@ footer {
   color: var(--primary-blue);
 }
 
+/* Container pushing email to left and button far right */
+.email-inline-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes Copy button far right */
+  gap: 16px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+
+.email-address {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  word-break: break-all;
+}
 .copy-btn {
   font-size: 0.8rem !important;
   padding: 6px 12px !important;
   cursor: pointer;
 }
 
+.copy-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--accent-light); /* Soft light blue key background #eef2ff */
+  color: var(--primary-blue);
+  border: 1px solid rgba(91, 115, 232, 0.3);
+  box-shadow: 0 2px 0 rgba(91, 115, 232, 0.25); /* Keyboard keycap depth */
+  padding: 6px 14px;
+  border-radius: 10px; /* Soft keycap shape */
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.copy-icon-btn:hover {
+  background: var(--primary-blue);
+  color: #ffffff;
+  border-color: var(--primary-blue);
+  transform: translateY(1px); /* Tactile key-press effect */
+  box-shadow: 0 1px 0 rgba(91, 115, 232, 0.25);
+}
+
+.copy-icon-btn.copied {
+  background: #059669; /* Emerald green background on copy */
+  color: #ffffff;
+  border-color: #059669;
+  box-shadow: 0 1px 0 rgba(5, 150, 105, 0.3);
+}
 .copy-feedback {
   display: none;
   font-family: var(--font-mono);
@@ -592,4 +799,27 @@ footer {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Container for physics canvas layer */
+#skills-physics-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Behind main content cards */
+  pointer-events: none; /* Allows scrolling and clicking on middle content */
+}
+
+/* Enable pointer events on the canvas itself for ball dragging */
+#skills-physics-container canvas {
+  pointer-events: auto;
+  display: block;
+}
+
+/* Keep main content sitting above canvas */
+.container, .hero-card, .stat-banner, .section-block, header, footer {
+  position: relative;
+  z-index: 2;
 }

@@ -1,52 +1,108 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-    <meta name="description" content="Formal Qualifications - Jordan Tan" /> 
-    <title>Jordan Tan — Formal Qualifications</title> 
-    <link rel="stylesheet" href="styles.css" /> 
-  </head> 
-  <body> 
-    <div id="shared-header"></div> 
-    <main class="container" role="main" style="max-width:1100px;margin:0 auto;padding:20px;"> 
-      <header style="display:flex;gap:12px;align-items:center;"> 
-        <h1 style="font-family:system-ui, -apple-system;margin:.2rem 0;">Formal Qualifications</h1> 
-      </header>
-      <section id="qualification-list" class="card-grid" style="display:grid;gap:16px;margin-top:10px;">
-        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-          <h3>University Bachelor’s Degree in Computing (Software/Computer Science)</h3>
-          <p>Curtin University, Western Australia</p>
-          <ul>
-            <li>Major: Computer Science</li>
-            <li>Expected graduation: February 2027</li>
-            <li>Note: Degree currently in progress</li>
-          </ul>
-        </article>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formal Qualifications - Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-          <h3>She Codes Plus Program</h3>
-          <p>Completed: 2021/2022</p>
-          <ul>
-            <li>Experience with coding fundamentals, collaboration, and real-world projects</li>
-          </ul>
-        </article>
+  <div id="header-placeholder"></div>
 
-        <article class="qualification-item card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-         <h3>Other Certifications</h3>
-          <ul>
-            <li>Certificate III & IV in Fitness</li>
-            <li>Approved Manager (Hospitality)</li>
-            <li>First Aid</li>
-            <li>Working With Children Check (WWCC)</li>
-          </ul>
-        </article>
-      </section>
-    </main> 
-    <script> .then(resp => resp.text())
-      .then(html => {
-        document.getElementById('shared-header').innerHTML = html;
+  <main class="page-container">
+    <section class="section-block">
+      <div class="section-header-wrap">
+        <h1 class="page-heading">Formal Qualifications</h1>
+        <span class="heading-badge">// EDUCATION &amp; CERTIFICATIONS</span>
+      </div>
+
+      <div class="qual-grid">
+        <!-- Curtin Degree Card -->
+        <div class="card qual-card">
+          <div class="card-header">
+            <span class="card-badge">EDUCATION</span>
+            <span class="status-pill status-active">In Progress</span>
+          </div>
+          <h2 class="qual-title">
+            <a href="https://www.curtin.edu.au/study/offering/course-ug-bachelor-of-computing--b-comp/" target="_blank" rel="noopener noreferrer" class="title-link">
+              Bachelor of Computing →
+            </a>
+          </h2>
+          <p class="qual-subtitle">Curtin University, Western Australia</p>
+          
+          <div class="qual-details">
+            <div class="detail-row">
+              <span class="detail-label">Major:</span>
+              <span class="detail-value">Computer Science</span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Graduation:</span>
+              <span class="detail-value">Expected Feb 2027</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SheCodes Card -->
+      <div class="card qual-card shecodes-card">
+        <!-- Round Floating Badge (Top Right Edge) -->
+        <a href="https://shecodes.com.au/" target="_blank" rel="noopener noreferrer" class="badge-link">
+          <img src="images/shecodes.png" alt="She Codes Australia Logo" class="shecodes-badge" />
+        </a>
+
+        <div class="card-header">
+          <span class="card-badge">PROGRAM</span>
+        </div>
+
+        <h2 class="qual-title">
+          <a href="https://shecodes.com.au/plus/" target="_blank" rel="noopener noreferrer" class="title-link">
+            She Codes Plus Program →
+          </a>
+        </h2>
+        <p class="qual-subtitle">6-Month Intensive Project-Based Tech Program</p>
+  
+        <ul class="clean-list">
+          <li>5 Project Stages: HTML &amp; CSS, Python, Django, React JS, &amp; Real-Client Group Project</li>
+          <li>Built responsive web applications from scratch utilising browser dev tools</li>
+          <li>Engaged in weekly stand-ups, pair programming, and agile teamwork</li>
+          <li>Supported by 1-on-1 industry mentorship and HQ corporate immersion days</li>
+          <li>Youngest graduate in program history (2022)</li>
+        </ul>
+        <div class="card-footer-right">
+          <span class="status-pill">Completed 2022</span>
+        </div>
+
+      </div>
+
+        <!-- Certifications Card (Spans Full Width on Second Row for Balance) -->
+        <div class="card qual-card qual-card-full">
+          <h2 class="qual-title">Other Certifications &amp; Licenses</h2>
+          
+          <div class="cert-tags">
+            <span class="keycap-tag">Certificate III &amp; IV in Fitness</span>
+            <span class="keycap-tag">Approved Hospitality Manager (AHM)</span>
+            <span class="keycap-tag">First Aid Certification</span>
+            <span class="keycap-tag">Working With Children Check (WWCC)</span>
+            <span class="keycap-tag">Class C Driver's License</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
       })
-      .catch(err => console.error('Error loading header:', err)); </script> 
-  </body> 
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <script src="skills-physics.js"></script>
+</body>
 </html>

@@ -46,32 +46,22 @@
 
     </section>
 
-    <!-- 4-Column Stat Banner -->
-    <section class="stat-banner">
-      <div class="stat-item">
-        <div class="stat-number">FEB 2027</div>
-        <div class="stat-label">Expected graduation</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">06+</div>
-        <div class="stat-label">years working with people</div>
-      </div>
-      
-      <div class="stat-item">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">questions before assumptions</div>
-      </div>
-      <div class="stat-item stat-item-highlight">
-        <div class="stat-text-main">Gen Z by birth.</div>
-        <div class="stat-text-sub">Human-first by choice.</div>
-      </div>
-    </section>
+    <!-- Status & Location Card -->
+    <div class="card info-card">
+      <div class="card-badge">STATUS &amp; LOCATION</div>
+      <h3 class="info-heading">Current Availability</h3>
+      <ul class="status-list">
+        <li><strong>Status:</strong> Open to Software &amp; Junior Dev Roles</li>
+        <li><strong>Location:</strong> Residing in Perth, WA. Open to relocating! </li>
+        <li><strong>Graduation:</strong> Expected Feb 2027 (Curtin University)</li>
+      </ul>
+    </div>
 
     <!-- Interactive Experience Cards -->
     <section class="section-block">
       <h2 class="section-heading">Core Highlights</h2>
+  
       <div class="card-grid">
-        
         <div class="card">
           <div class="card-badge">EDUCATION</div>
           <h3 class="card-title">Curtin University</h3>
@@ -83,13 +73,30 @@
 
         <div class="card">
           <div class="card-badge">EXTRA CURRICULAR</div>
-          <h3 class="card-title">SheCodes Plus</h3>
+          <h3 class="card-title">SheCodes Plus+</h3>
           <p class="card-desc">
             6 month women in tech program. Youngest graduate (2022).
           </p>
           <a href="projects.html" class="btn-secondary">View all projects →</a>
         </div>
 
+        <div class="card">
+          <div class="card-badge">PROJECTS</div>
+          <h3 class="card-title">Sustainability Project</h3>
+          <p class="card-desc">
+            Real world group University project. Built a web app to help City of Melville track Scope 3 Emissions.
+          </p>
+          <a href="qualifications.html" class="btn-secondary">View all projects →</a>
+        </div>
+
+        <div class="card">
+          <div class="card-badge">EXPERIENCE</div>
+          <h3 class="card-title">Evolve Creative</h3>
+          <p class="card-desc">
+            Business Owner in Marketing.
+          </p>
+          <a href="experience.html" class="btn-secondary">View all experience →</a>
+        </div>
       </div>
     </section>
 
@@ -143,6 +150,14 @@
       })
       .catch(err => console.error('Error loading header:', err));
   </script>
+
+  <!-- Canvas wrapper for falling skill balls -->
+  <div id="skills-physics-container"></div>
+
+  <!-- Include Matter.js Physics Engine -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+  <!-- Main Physics Script -->
+  <script src="skills-physics.js"></script>
 
 </body>
 </html>
