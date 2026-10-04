@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const { Engine, Render, Runner, Bodies, Composite, Mouse, MouseConstraint, Events, Body } = Matter;
 
   const container = document.getElementById("skills-physics-container");
+  const mainContent = document.querySelector(".container") || document.querySelector(".page-container");
+  
   let width = window.innerWidth;
   let height = window.innerHeight;
 
@@ -26,44 +28,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const runner = Runner.create();
   Runner.run(runner, engine);
 
-  // 3. Define Boundaries with Fallbacks for Small/Medium Screens
-  const contentWidth = 1000; // Adjusted zone width
-  const thickness = 60;
-  
- // Left column extends from 0 to the card edge
-  const leftContainerLeft = 0;
-  const leftContainerRight = Math.max(80, (width - contentWidth) / 2);
-  
-  // Right column extends from card edge to full screen width
-  const rightContainerLeft = Math.min(width - 80, (width + contentWidth) / 2);
-  const rightContainerRight = width;
+  // 3. Measure EXACT card edges dynamically
+  let cardRect = mainContent ? mainContent.getBoundingClientRect() : { left: (width - 1000) / 2, right: (width + 1000) / 2 };
+
+  // Inner walls align directly with card boundaries (with 10px buffer)
+  const leftEdge = Math.max(20, cardRect.left - 10);
+  const rightEdge = Math.min(width - 20, cardRect.right + 10);
+  const thickness = 50;
 
   const hiddenWallOptions = { 
     isStatic: true, 
     render: { visible: false } 
   };
 
-  // Floors raised slightly (height - 10) so balls sit completely inside the viewport
+  // Floors for left and right drop zones
   const floorLeft = Bodies.rectangle(
-    leftContainerRight / 2, 
-    height - 10,
-    leftContainerRight, 
+    leftEdge / 2, 
+    height - 2,
+    leftEdge, 
     thickness, 
     hiddenWallOptions
   );
 
   const floorRight = Bodies.rectangle(
-    rightContainerLeft + (width - rightContainerLeft) / 2, 
-    height - 10, 
-    width - rightContainerLeft, 
+    rightEdge + (width - rightEdge) / 2, 
+    height - 2, 
+    width - rightEdge, 
     thickness, 
     hiddenWallOptions
   );
 
   // Side Walls
   const outerWallLeft = Bodies.rectangle(-thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
-  const innerWallLeft = Bodies.rectangle(leftContainerRight + thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
-  const innerWallRight = Bodies.rectangle(rightContainerLeft - thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
+  const innerWallLeft = Bodies.rectangle(leftEdge - thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
+  const innerWallRight = Bodies.rectangle(rightEdge + thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
   const outerWallRight = Bodies.rectangle(width + thickness / 2, height / 2, thickness, height * 2, hiddenWallOptions);
 
   Composite.add(engine.world, [
@@ -76,20 +74,26 @@ document.addEventListener("DOMContentLoaded", () => {
   ]);
 
   // 4. Create Skill Balls
-  const skills = ["Python", "React", "TypeScript", "SQL", "C++", "Django", "Git", "Math Logic", "HTML/CSS"];
+  const skills = ["Python", "JavaScript", "React", "TypeScript", "SQL", "C++", "Django", "Git", "Math Logic", "HTML/CSS", "wordpress", "Node.js", "REST APIs", "Data", "Algorithms", "Agile", "Linux", "WIX", "AI", "ML", "Figma", "SEO", "UI/UX", "VMware"];
   const balls = [];
-  const radius = 60;
+  const radius = 55; // Slightly adjusted so 60px balls fit comfortably in side margins
 
   skills.forEach((skill, index) => {
     const isLeft = index % 2 === 0;
     
-    // Calculate spawn positions strictly inside side bounds
-    const minX = isLeft ? radius + 10 : rightContainerLeft + radius;
-    const maxX = isLeft ? leftContainerRight - radius : width - radius - 10;
-    
-    // Fallback if margin is tight
-    const spawnX = maxX > minX ? Math.random() * (maxX - minX) + minX : (isLeft ? 50 : width - 50);
-    const spawnY = -60 - (index * 70); // Drop sequence above screen
+    // Spawn X strictly bounded between screen edge and card edge
+    let spawnX;
+    if (isLeft) {
+      const minX = radius + 5;
+      const maxX = Math.max(minX + 10, leftEdge - radius - 5);
+      spawnX = Math.random() * (maxX - minX) + minX;
+    } else {
+      const minX = rightEdge + radius + 5;
+      const maxX = Math.max(minX + 10, width - radius - 5);
+      spawnX = Math.random() * (maxX - minX) + minX;
+    }
+
+    const spawnY = -60 - (index * 80); // Drop sequence above screen
 
     const ball = Bodies.circle(spawnX, spawnY, radius, {
       restitution: 0.5,
@@ -111,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 5. Render Monospace Labels Inside Skill Balls
   Events.on(render, "afterRender", () => {
     const ctx = render.context;
-    ctx.font = "bold 20px Courier Prime, monospace";
+    ctx.font = "bold 18px Courier Prime, monospace";
     ctx.fillStyle = "#4a3b32";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";

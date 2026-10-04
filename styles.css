@@ -51,15 +51,15 @@ body {
 
 /* Update .logo-circle / #initials in styles.css */
 .logo-circle, #initials {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px; /* Soft square/badge instead of harsh circle */
+  width: 50px;
+  height: 50px;
+  border-radius: 14px; /* Soft square/badge instead of harsh circle */
   background: var(--accent-light); /* Soft tint background (#eef2ff) */
   color: var(--primary-blue); /* #5b73e8 */
   border: 1px solid rgba(91, 115, 232, 0.25);
   font-family: var(--font-mono); /* Courier Prime for technical touch */
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -139,9 +139,9 @@ body {
 
 /* Layout Container */
 .container {
-  max-width: 1080px;
-  margin: 20px auto 60px auto;
-  padding: 0 24px;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px 20px;
   flex: 1;
 }
 
@@ -231,11 +231,11 @@ body {
 /* Hero Content Typography */
 .category-tag {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary-blue);
   letter-spacing: 0.05em;
-  margin-bottom: 12px;
+  margin-bottom: 21px;
   display: block;
 }
 
@@ -275,7 +275,7 @@ body {
   border-radius: 12px; /* Matching 12px key cap corner radius */
   font-family: var(--font-mono); /* Courier Prime */
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
@@ -285,8 +285,8 @@ body {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-blue);
-  color: #ffffff !important;
+  background-color: var(--accent-light);
+  color: var(--primary-blue) !important;
   border-color: var(--primary-blue);
   transform: translateY(1px); /* Tactile key-press effect */
   box-shadow: 0 1px 0 rgba(91, 115, 232, 0.25);
@@ -324,7 +324,7 @@ body {
 
 .card-badge {
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--primary-blue);
   font-weight: 700;
   margin-bottom: 8px;
@@ -359,6 +359,7 @@ body {
   gap: 6px;
   transition: all 0.15s ease;
 }
+
 /* Modal Popup */
 .modal-overlay {
   display: none;
@@ -375,8 +376,10 @@ body {
   padding: 20px;
 }
 
-.modal-overlay.active {
-  display: flex;
+.modal-overlay.is-active {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: flex !important;
 }
 
 .modal-content {
@@ -443,7 +446,6 @@ footer {
    Quals Specific Styles
    ========================================== */
 .page-container {
-  max-width: 1000px;
   margin: 40px auto;
   padding: 0 20px;
 }
@@ -475,6 +477,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  margin-top: 16px;
 }
 
 .qual-card {
@@ -482,7 +485,7 @@ footer {
   flex-direction: column;
   background: #ffffff;
   border-radius: 16px;
-  padding: 28px;
+  padding: 32px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
@@ -609,7 +612,7 @@ footer {
   position: absolute;
   top: -16px;
   right: -16px;
-  height: 42px;             /* Fits rectangular proportions cleanly */
+  height: 50px;             /* Fits rectangular proportions cleanly */
   width: auto;
   padding: 6px 14px;
   background: #ffffff;
@@ -777,7 +780,7 @@ footer {
 }
 
 .info-heading {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   margin-bottom: 6px;
 }
 
@@ -876,7 +879,7 @@ footer {
 .status-list {
   list-style: none;
   padding: 0;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-muted);
   display: flex;
   flex-direction: column;
@@ -923,3 +926,6 @@ footer {
   position: relative;
   z-index: 2;
 }
+
+
+
