@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Experience & Resume - Jordan Tan" />
+  <title>Jordan Tan — Experience</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="header-placeholder"></div>
+
+  <main class="page-container">
+    <section class="section-block">
+      <!-- Section Header -->
+      <div class="section-header-wrap">
+        <h1 class="page-heading">Work Experience</h1>
+        <span class="heading-badge">// CAREER &amp; ROLES</span>
+      </div>
+
+      <div class="qual-grid">
+        <!-- Evolve Creative -->
+        <article class="card qual-card qual-card-full curtin-card">
+          <!-- Evolve Creative Floating Badge (Top Right Edge) -->
+          <a href="https://evolve-creative.com.au/" target="_blank" rel="noopener noreferrer" class="badge-link">
+            <img src="images/evolvecreativelogo.jpg" alt="Evolve Creative Logo" class="evolve-badge" />
+          </a>
+          <div class="card-top-row">
+            <span class="card-badge">BUSINESS OWNER</span>
+            <span class="status-pill status-active">2025 – Present</span>
+          </div>
+
+          <h2 class="qual-title">Evolve Creative Social Media Agency</h2>
+          <p class="qual-subtitle">Business Owner &amp; Founder</p>
+
+          <ul class="clean-list">
+            <li>Built and managed the business end-to-end, including website development, client communications, invoicing, and workflow systems.</li>
+            <li>Managed digital content, social media scheduling, and small scale campaigns, coordinating with clients and stakeholders to ensure effective, high-quality outcomes.</li>
+            <li>Created reports by extracting and analysing data to track progress and inform meaningful marketing decisions.</li>
+            <li>Conceptualised creative solutions, produced content, optimised tools, and adapted to platform and industry changes.</li>
+          </ul>
+        </article>
+
+        <!-- City of Perth Surf Life Saving Club -->
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">ADMIN &amp; FITNESS</span>
+            <span class="status-pill status-active">2024 – Present</span>
+          </div>
+
+          <h2 class="qual-title">Administration &amp; Fitness Trainer</h2>
+          <p class="qual-subtitle">City of Perth Surf Life Saving Club (NFP)</p>
+
+          <ul class="clean-list">
+            <li>Supported community operations, including managing gym memberships, payments, and assisting members with inquiries.</li>
+            <li>Worked across digital platforms deploying newsletters using Mailchimp, updating POS systems, navigating Surfguard, and TryBookings to support smooth administrative and digital processes.</li>
+            <li>Assisted with community engagement, volunteer coordination, and event operations, directing teams as an approved manager to ensure safe and efficient functions.</li>
+            <li>Group Senior Fitness Trainer.</li>
+          </ul>
+        </article>
+
+        <!-- Parker & Stone -->
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">MANAGEMENT</span>
+            <span class="status-pill">2022 – 2024</span>
+          </div>
+
+          <h2 class="qual-title">Photography Studio Manager</h2>
+          <p class="qual-subtitle">Parker &amp; Stone</p>
+
+          <ul class="clean-list">
+            <li>Managed all studio operations, including booking systems, client inquiries, scheduling, and staff coordination.</li>
+            <li>Enhanced and maintained website through managing inventory, working on SEO, implementing forms and pop-ups.</li>
+            <li>Made process improvements including email automations and scheduled digital content to reduce manual workload.</li>
+            <li>Coordinated studio functions, managing clients, vendors, staff, and administrative tasks to ensure smooth, timely execution.</li>
+            <li>Oversaw equipment checks, stock levels, and organised general maintenance and repairs.</li>
+          </ul>
+        </article>
+
+        <!-- Hospitality Supervisor -->
+        <article class="card qual-card qual-card-full">
+          <div class="card-top-row">
+            <span class="card-badge">HOSPITALITY</span>
+            <span class="status-pill">2015 – 2022</span>
+          </div>
+
+          <h2 class="qual-title">Hospitality Team Member &amp; Supervisor</h2>
+          <p class="qual-subtitle">Multiple Venues</p>
+
+          <ul class="clean-list">
+            <li>Provided high-quality customer service while managing daily operations and team coordination during peak periods.</li>
+            <li>Supervised staff, delegated tasks, and trained new team members, ensuring high customer service standards.</li>
+            <li>Utilised POS systems, managed inventory, handled banking and cash, and oversaw venue opening and closing.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
+      })
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+</body>
+</html>

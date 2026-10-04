@@ -1,54 +1,102 @@
 <!DOCTYPE html> 
 <html lang="en"> 
-  <head> 
-    <meta charset="UTF-8" /> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-    <meta name="description" content="Projects - Jordan Tan" /> 
-    <title>Jordan Tan — Projects</title> 
-    <link rel="stylesheet" href="styles.css" /> 
-  </head> 
-  <body> 
-    <div id="shared-header"></div> 
-    <main class="container" role="main" style="max-width:1100px;margin:0 auto;padding:20px;"> 
-      <header style="display:flex;gap:12px;align-items:center;margin-bottom:6px;"> 
-        <h1 style="margin:.2rem 0;font-family:system-ui, -apple-system;">Projects</h1> 
-      </header>
-      <section id="projects-list" class="card-grid" style="display:grid;gap:16px;margin-top:6px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
-        <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-          <h3>Marketing Website for Evolve Creative</h3>
-          <p>Client: Evolve Creative</p>
-    <p><a href="https://evolve-creative.com.au/" target="_blank" rel="noopener">evolve-creative.com.au</a></p>
-  </article>
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <meta name="description" content="Projects - Jordan Tan" /> 
+  <title>Jordan Tan — Projects</title> 
+  <link rel="stylesheet" href="styles.css" /> 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head> 
+<body> 
 
-  <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-    <h3>Sustainability Challenge (University)</h3>
-    <p>Group project: Climate Change Website Template</p>
-    <p>Figma Prototype: <a href="https://www.figma.com/" target="_blank" rel="noopener">Figma</a></p>
-  </article>
+  <div id="header-placeholder"></div> 
 
-  <article class="card" style="padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-    <h3>This Portfolio Website</h3>
-    <p>Self-initiated project to showcase skills and projects.</p>
-  </article>
+  <main class="page-container"> 
+    <section class="section-block">
+      <!-- Section Title -->
+      <div class="section-header-wrap">
+        <h1 class="page-heading">Featured Projects</h1>
+        <span class="heading-badge">// PORTFOLIO & WORK</span>
+      </div>
 
-</section>
+      <!-- Main Projects Grid -->
+      <div class="qual-grid">
+        <!-- Evolve Creative Project -->
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">BUSINESS</span>
+          </div>
+          <h2 class="qual-title">Evolve Creative</h2>
+          <p class="qual-subtitle">Website development</p>
+          <div class="card-footer-right">
+            <a href="https://evolve-creative.com.au/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              evolve-creative.com.au →
+            </a>
+          </div>
+        </article>
 
-<section id="freelance" style="margin-top:28px;">
-  <h2 style="background-color:rgb(168,185,244);padding:10px;border-radius:8px;display:inline-block;">Freelance / Independent Projects</h2>
-  <div class="card" style="margin-top:12px;padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-    <h3>Podcast Production & Branding</h3>
-    <p>Concept, editing, audio branding, and publishing workflow for client podcasts.</p>
-  </div>
-  <div class="card" style="margin-top:12px;padding:16px;border-radius:12px;background:#fff;border:1px solid #e5e7eb;">
-    <h3>Advertising Assets</h3>
-    <p>Design and copy for social campaigns; asset scaling for multiple platforms.</p>
-  </div>
-</section>
-    </main> 
-    <script> .then(resp => resp.text())
-      .then(html => {
-        document.getElementById('shared-header').innerHTML = html;
+        <!-- Sustainability Challenge -->
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">UNIVERSITY</span>
+          </div>
+          <h2 class="qual-title">Sustainability Challenge</h2>
+          <p class="qual-subtitle">Group Project: City of Melville Scope 3 Emissions Accounting Platform</p>
+          <div class="card-footer-right">
+            <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+              Figma Prototype →
+            </a>
+          </div>
+        </article>
+
+        <!-- Portfolio Website (Full Width) -->
+        <article class="card qual-card qual-card-full">
+          <div class="card-top-row">
+            <span class="card-badge">SELF-INITIATED</span>
+          </div>
+          <h2 class="qual-title">This Portfolio Website</h2>
+          <p class="qual-subtitle">Custom responsive portfolio built to showcase formal qualifications, client work, and interactive UI skills.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Freelance Section -->
+    <section class="section-block" style="margin-top: 48px;">
+      <div class="section-header-wrap">
+        <h2 class="page-heading" style="font-size: 1.5rem;">Freelance &amp; Independent Projects</h2>
+      </div>
+
+      <div class="qual-grid">
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">AUDIO &amp; BRANDING</span>
+          </div>
+          <h3 class="qual-title">Podcast Production &amp; Branding</h3>
+          <p class="qual-subtitle">Concept, editing, audio branding, and publishing workflow for client podcasts.</p>
+        </article>
+
+        <article class="card qual-card">
+          <div class="card-top-row">
+            <span class="card-badge">MARKETING</span>
+          </div>
+          <h3 class="qual-title">Advertising Assets</h3>
+          <p class="qual-subtitle">Design and copy for social campaigns; asset scaling across multiple platforms.</p>
+        </article>
+      </div>
+    </section>
+  </main> 
+
+  <!-- Header Fetch Script -->
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header-placeholder").innerHTML = data;
       })
-      .catch(err => console.error('Error loading header:', err)); </script> 
-  </body> 
+      .catch(error => console.error("Error loading header:", error));
+  </script>
+</body> 
 </html>
