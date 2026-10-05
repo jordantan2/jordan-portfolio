@@ -1009,11 +1009,6 @@ footer {
     z-index: 1000 !important;
   }
 
-  /* 4. Slide navigation in when JS adds the 'active' class */
-  .site-nav.active {
-    right: 0 !important;
-  }
-
   /* 5. Transform hamburger bars into an 'X' when active */
   .menu-toggle.is-active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -1023,5 +1018,38 @@ footer {
   }
   .menu-toggle.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Hide nav links off-screen on mobile */
+  .site-nav {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important; /* Fully hidden off screen */
+    width: 75% !important;
+    max-width: 280px !important;
+    height: 100vh !important;
+    background-color: #ffffff !important;
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2) !important;
+    padding: 5rem 2rem 2rem 2rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 1.5rem !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 9999 !important; /* Bring above page content */
+  }
+
+  /* Slide in menu when 'active' class is toggled by JS */
+  .site-nav.active {
+    right: 0 !important;
+  }
+
+  /* Make sure the toggle button is clickable on mobile */
+  .menu-toggle {
+    display: flex !important;
+    z-index: 10000 !important; /* Sits above slide-out drawer */
+    cursor: pointer;
   }
 }
