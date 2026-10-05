@@ -54,7 +54,7 @@ body {
 .logo-circle, #initials {
   width: 60px;
   height: 60px;
-  border-radius: 14px; /* Soft square/badge instead of harsh circle */
+  border-radius: 12px; /* Soft square/badge instead of harsh circle */
   background: var(--accent-light); /* Soft tint background (#eef2ff) */
   color: var(--primary-blue); /* #5b73e8 */
   border: 2px solid rgba(91, 115, 232, 0.25);
@@ -1007,25 +1007,6 @@ footer {
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  /* 3. Hide navigation links off-screen by default */
-  .site-nav {
-    position: fixed !important;
-    top: 0 !important;
-    right: -100% !important;
-    width: 75% !important;
-    max-width: 280px !important;
-    height: 100vh !important;
-    background-color: #ffffff !important;
-    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.15) !important;
-    padding: 5rem 2rem 2rem 2rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 1.5rem !important;
-    transition: right 0.3s ease-in-out !important;
-    z-index: 1000 !important;
-  }
-
   /* 5. Transform hamburger bars into an 'X' when active */
   .menu-toggle.is-active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -1045,7 +1026,7 @@ footer {
     top: 0 !important;
     right: -100% !important; /* Fully hidden off screen */
     width: 75% !important;
-    max-width: 280px !important;
+    max-width: 210px !important;
     height: 100vh !important;
     background-color: #ffffff !important;
     box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2) !important;
