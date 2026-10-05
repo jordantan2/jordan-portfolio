@@ -877,16 +877,66 @@ footer {
   font-weight: 700;
 }
 
-.status-list {
-  list-style: none;
-  padding: 0;
-  font-size: 1rem;
-  color: var(--text-muted);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+/* Status & Skills Grid Container */
+.status-skills-card {
+  margin-top: 24px;
+}
+.status-skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
 }
 
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4352b3; /* Matching the purple-blue accent tint */
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.status-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+/* Skills Tag Cloud */
+.skills-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background-color: #f3eee7; /* Soft beige tag background */
+  color: #2c2c2c;
+  border: 1px solid #e2dad0;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+  background-color: #4352b3;
+  color: #ffffff;
+  border-color: #4352b3;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .status-skills-grid {
+    grid-template-columns: 1fr; /* Stacks vertically on smaller screens */
+    gap: 1.5rem;
+  }
+}
 .social-links-grid {
   display: flex;
   gap: 12px;
@@ -905,28 +955,8 @@ footer {
   }
 }
 
-/* Container for physics canvas layer */
-#skills-physics-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 0; /* Behind main content cards */
-  pointer-events: none; /* Allows scrolling and clicking on middle content */
-}
+/* ==========================================
+   Responsive Adjustments
+   ========================================== */
 
-/* Enable pointer events on the canvas itself for ball dragging */
-#skills-physics-container canvas {
-  pointer-events: auto;
-  display: block;
-}
-
-/* Keep main content sitting above canvas */
-.container, .hero-card, .stat-banner, .section-block, header, footer {
-  position: relative;
-  z-index: 2;
-}
-
-
-
+   

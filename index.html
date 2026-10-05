@@ -45,16 +45,43 @@
       </div>
     </section>
 
-    <!-- Status & Location Card -->
-    <div class="card info-card">
-      <div class="card-badge">STATUS &amp; LOCATION</div>
-      <h3 class="info-heading">Current Availability</h3>
-      <ul class="status-list">
-        <li><strong>Status:</strong> Actively Seeking Software &amp; Junior Dev Roles</li>
-        <li><strong>Location:</strong> Currently residing in Perth, WA, however open to relocating. </li>
-        <li><strong>Graduation:</strong> Expected Feb 2027 (Curtin University)</li>
-      </ul>
+      <section class="card status-skills-card">
+  <div class="status-skills-grid">
+    
+    <!-- Column 1: Current Availability -->
+    <div class="status-col">
+      <span class="section-label">STATUS &amp; LOCATION</span>
+      <h3 class="status-heading">Current Availability</h3>
+      <p><strong>Status:</strong> Actively Seeking Software &amp; Junior Dev Roles</p>
+      <p><strong>Location:</strong> Perth, WA (Open to Relocating)</p>
+      <p><strong>Graduation:</strong> Expected Feb 2027 (Curtin University)</p>
     </div>
+
+    <!-- Column 2: Tech Stack & Skills -->
+    <div class="skills-col">
+      <span class="section-label">TECH STACK &amp; SKILLS</span>
+      <h3 class="status-heading">Core Competencies</h3>
+      
+      <div class="skills-tag-grid">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Django</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">TypeScript</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">VMware</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Workflow Automation</span>
+        <span class="skill-tag">Technical Communication</span>
+      </div>
+    </div>
+
+  </div>
+</section>
 
     <!-- Interactive Experience Cards -->
     <section class="section-block">
@@ -143,15 +170,6 @@
       })
       .catch(err => console.error('Error loading header:', err));
   </script>
-
-  <!-- Canvas wrapper for falling skill balls -->
-  <div id="skills-physics-container"></div>
-
-  <!-- Include Matter.js Physics Engine -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
-  <!-- Main Physics Script -->
-  <script src="skills-physics.js"></script>
-
   
   <script src="coverletter.js" defer></script>
 </body>
