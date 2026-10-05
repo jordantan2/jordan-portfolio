@@ -990,6 +990,8 @@ footer {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
     box-sizing: border-box !important;
+    margin-top: 60px !important;
+    padding-top: 1rem !important;
   }
   .menu-toggle {
     display: flex !important;
@@ -1111,5 +1113,18 @@ footer {
     display: flex !important;
     z-index: 10000 !important; /* Sits above slide-out drawer */
     cursor: pointer;
+  }
+  #header-placeholder,
+  .site-header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 99999 !important; /* Keep above all scrolling page content */
+    background-color: #fcfbf9 !important; /* Ensure solid background so page content doesn't bleed through */
+  }
+  body {
+    padding-top: 0 !important;
   }
 }
