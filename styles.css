@@ -54,10 +54,10 @@ body {
 .logo-circle, #initials {
   width: 60px;
   height: 60px;
-  border-radius: 12px; /* Soft square/badge instead of harsh circle */
+  border-radius: 14px; /* Soft square/badge instead of harsh circle */
   background: var(--accent-light); /* Soft tint background (#eef2ff) */
   color: var(--primary-blue); /* #5b73e8 */
-  border: 2px solid rgba(91, 115, 232, 0.25);
+  border: 1px solid rgba(91, 115, 232, 0.25);
   font-family: var(--font-mono); /* Courier Prime for technical touch */
   font-weight: 700;
   font-size: 1.8rem;
@@ -984,6 +984,15 @@ footer {
 /* Force mobile rules when screen width is 768px or smaller */
 @media screen and (max-width: 768px) {
   /* 1. Unhide the hamburger button */
+  main, .container, section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    box-sizing: border-box !important;
+  }
+
+
   .menu-toggle {
     display: flex !important;
     flex-direction: column;
@@ -997,6 +1006,21 @@ footer {
     z-index: 1001;
   }
 
+  .card-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important; /* Safety fallback if CSS Grid is set */
+    width: 100% !important;
+    gap: 1.25rem !important;
+  }
+
+  /* Ensure cards fill full available mobile width */
+  .card-grid .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
   /* 2. Style the 3 bars inside the button */
   .menu-toggle .bar {
     width: 100%;
