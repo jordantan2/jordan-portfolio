@@ -41,25 +41,26 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 60px;
-  background-color: rgba(249, 251, 252, 0.904);
-  backdrop-filter: blur(12px);
+  padding: 1.25rem 2.5rem;
+  background-color: #fcfbf9;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(8px);
 }
 
 /* Update .logo-circle / #initials in styles.css */
 .logo-circle, #initials {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 14px; /* Soft square/badge instead of harsh circle */
   background: var(--accent-light); /* Soft tint background (#eef2ff) */
   color: var(--primary-blue); /* #5b73e8 */
-  border: 1px solid rgba(91, 115, 232, 0.25);
+  border: 2px solid rgba(91, 115, 232, 0.25);
   font-family: var(--font-mono); /* Courier Prime for technical touch */
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -70,25 +71,36 @@ body {
 .site-nav {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .nav-link {
-  text-decoration: none;
-  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.90rem;
   font-weight: 600;
-  font-size: 0.95rem;
+  color: #2c2c2c;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .dropbtn {
-  background: none;
+  background: transparent;
   border: none;
-  color: var(--text-main);
-  font-weight: 600;
+  font-family: system-ui, -apple-system, sans-serif;
   font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c2c2c;
   cursor: pointer;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
 }
 
+.dropbtn:hover {
+  color: #4f52e6;
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -111,6 +123,11 @@ body {
   font-size: 0.9rem;
 }
 
+.dropdown-content a:hover {
+  background-color: #f4f5fe;
+  color: #4f52e6;
+}
+
 .btn-blue {
   background: var(--accent-light); /* Matching light key surface */
   color: var(--primary-blue) !important;
@@ -121,7 +138,7 @@ body {
   text-decoration: none;
   font-family: var(--font-mono);
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
